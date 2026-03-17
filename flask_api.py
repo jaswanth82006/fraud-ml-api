@@ -156,8 +156,7 @@ def predict():
         "fired_rules":       fired_rules,
     })
 
-if __name__ == '__main__':
-    print("Flask ML API starting on port 5000...")
-    print("Health check: GET http://localhost:5000/health")
-    print("Predict:      POST http://localhost:5000/predict")
-    app.run(host='0.0.0.0', port=5000, debug=False)
+if __name__ == "__main__":
+    import os
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
